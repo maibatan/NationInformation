@@ -1,0 +1,27 @@
+package com.example.nationinformation.model;
+
+public class Country {
+    private String name;
+    private String population;
+    private String areaInSqKm;
+
+    public Country(String name, String population, String areaInSqKm) {
+        this.name = name;
+
+        this.population = population;
+        this.areaInSqKm = areaInSqKm;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+
+    public String getPopulation() {
+        return population;
+    }
+
+    public String getAreaInSqKm() {
+        return areaInSqKm;
+    }
+}
