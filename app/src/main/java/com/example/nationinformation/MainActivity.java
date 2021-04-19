@@ -47,6 +47,7 @@ public class MainActivity extends AppCompatActivity {
 
         new  HttpGetTask().execute();
 
+
     }
 
     private class  HttpGetTask extends AsyncTask<Void,Void,String>
@@ -106,15 +107,15 @@ public class MainActivity extends AppCompatActivity {
                     JSONObject jsonobject = jsonarray.getJSONObject(i);
 
                     String country = jsonobject.getString("countryName");
-
+                    String countryCode = jsonobject.getString("countryCode");
                     String  area =jsonobject.getString("areaInSqKm");
                     String population = jsonobject.getString("population");
-                    Country countryObj=new Country(country,population,area);
+                    Country countryObj=new Country(country,population,area,countryCode);
                     countries.add(countryObj);
-
+                    countryAdapter = new CountryAdapter(getBaseContext(), countries);
+                    recyclerView.setAdapter(countryAdapter);
                 }
-                countryAdapter = new CountryAdapter(getParent(), countries);
-                recyclerView.setAdapter(countryAdapter);
+
             } catch ( JSONException e) {
                 e.printStackTrace();
             }
