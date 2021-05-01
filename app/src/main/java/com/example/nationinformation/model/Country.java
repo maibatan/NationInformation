@@ -6,6 +6,8 @@ public class Country {
     private String areaInSqKm;
     private String countryCode;
 
+
+    
     public Country(String name, String population, String areaInSqKm) {
         this.name = name;
 
